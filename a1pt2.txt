@@ -1,0 +1,16 @@
+import urllib2
+import BeautifulSoup
+
+request = urllib2.Request("http://www.cs.odu.edu/~mln/teaching/cs532-s17/test/pdfs.html")
+response = urllib2.urlopen(request)
+soup = BeautifulSoup.BeautifulSoup(response)
+for a in soup.findAll('a'):
+  data = urllib.parse.urlencode(values)
+  data = data.encode('ascii') # data should be bytes
+  req = urllib.request.Request(url, data)
+  with urllib.request.urlopen(req) as response:
+   the_page = response.read(
+  if ‘pdf’ in a['href']:
+    print 'found a pdf in the link'
+
+
